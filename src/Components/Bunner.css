@@ -1,0 +1,105 @@
+section {
+  width: 100%;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bunner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  height: 300px;
+  width: 100%;
+}
+
+.bunner-content {
+  text-align: center;
+}
+
+.bunner-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bunner-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bunner-content button {
+  background: linear-gradient(45deg, #ff6b6b, #ffa500);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bunner-content button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(45deg, #ff5252, #ff8c00);
+}
+
+.bunner-content button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bunner-container {
+    padding: 30px 20px;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .bunner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .bunner-content p {
+    font-size: 1rem;
+  }
+
+  .bunner-content button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 20px 10px;
+  }
+
+  .bunner-container {
+    padding: 20px 15px;
+  }
+
+  .bunner-content h1 {
+    font-size: 2rem;
+  }
+
+  .bunner-content p {
+    font-size: 0.9rem;
+  }
+}
