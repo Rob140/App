@@ -6,5 +6,6 @@ body {
   font-family: Roboto;
 }
 section {
-  padding-block: 50px;
+  padding-block: 30px;
+  margin-block: 80px;
 }
