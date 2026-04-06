@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { CiCircleCheck } from "react-icons/ci";
+import { FaCartArrowDown, FaRegUserCircle } from "react-icons/fa";
 import "./Nav.css";
 
 const Nav = () => {
@@ -20,18 +21,20 @@ const Nav = () => {
           <a className="">Home</a>
         </ul>
         <div className="icons-container">
-          <IoMdMenu className="icon" />
-          <IoMdClose className="icon" />
+          <FaCartArrowDown className="icon" />
+          <FaRegUserCircle className="icon" />
           <CiCircleCheck className="icon" />
         </div>
       </nav>
-      <button className="menu" onClick={togglehandler}>
-        {toggle ? (
-          <IoMdClose className="icon" />
-        ) : (
-          <IoMdMenu className="icon" />
-        )}
-      </button>
+      <div className="menu-container">
+        <button className="menu" onClick={togglehandler}>
+          {toggle ? (
+            <IoMdClose className="icon" />
+          ) : (
+            <IoMdMenu className="icon" />
+          )}
+        </button>
+      </div>
     </header>
   );
 };

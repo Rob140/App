@@ -12,7 +12,7 @@ section {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  height: 300px;
+  height: auto;
   width: 100%;
 }
 

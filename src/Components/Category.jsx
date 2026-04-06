@@ -5,8 +5,10 @@ const Category = () => {
   const cato = [1, 2, 3];
   return (
     <>
-      <section>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+      <section className="c-section">
+        <h2 className="h2">
+          Lorem ipsum dolor sit amet consectetur adipisicing.
+        </h2>
         <div className="catogery-container">
           {cato.map((_, index) => (
             <div className="flex-category" key={index}>
