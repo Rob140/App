@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { CiCircleCheck } from "react-icons/ci";
 import "./Nav.css";
 
 const Nav = () => {
+  const [toggle, setToggle] = useState(false);
+  function togglehandler() {
+    setToggle(!toggle);
+  }
   return (
     <header className="header">
-      <nav className="nav">
-        <div className="logo">Logo</div>
+      <div className="logo">Logo</div>
+
+      <nav className={`nav ${toggle ? "active" : ""}`}>
         <ul className="navLinks">
           <a className="">Home</a>
           <a className="">Home</a>
@@ -19,11 +24,14 @@ const Nav = () => {
           <IoMdClose className="icon" />
           <CiCircleCheck className="icon" />
         </div>
-        <button className="menu">
-          <IoMdMenu className="icon" />
-          <IoMdClose className="icon" />
-        </button>
       </nav>
+      <button className="menu" onClick={togglehandler}>
+        {toggle ? (
+          <IoMdClose className="icon" />
+        ) : (
+          <IoMdMenu className="icon" />
+        )}
+      </button>
     </header>
   );
 };
