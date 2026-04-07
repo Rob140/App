@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Category.css";
 
 const Category = () => {
+  const r = useRef();
+  const scrollRef = useRef(null);
+  function handleFocus() {
+    r.current.focus();
+    r.current.style.backgroundColor = "red";
+
+    console.log(r);
+  }
+  function handleScroll() {
+    scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current.style.backgroundColor = "red";
+
+    console.log(scrollRef);
+  }
+
   const cato = [1, 2, 3];
   return (
     <>
-      <section className="c-section">
-        <h2 className="h2">
-          Lorem ipsum dolor sit amet consectetur adipisicing.
-        </h2>
+      <input type="text" ref={r} />
+      <section className="c-section" onClick={handleFocus}>
         <div className="catogery-container">
           {cato.map((_, index) => (
-            <div className="flex-category" key={index}>
+            <div ref={scrollRef} className="flex-category" key={index}>
+              <h2 className="h2">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
               <div className="category">
-                <button className="btn-category">button</button>
+                <button onClick={handleScroll} className="btn-category">
+                  button
+                </button>
               </div>
             </div>
           ))}

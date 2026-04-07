@@ -10,6 +10,7 @@
   flex: 1 1 200px;
   height: auto;
   border-radius: 10px;
+  width: 100%;
   background-image: url("../assets/gesund.jpg");
   background-size: cover;
   background-position: center;
@@ -26,4 +27,17 @@
 }
 .h2 {
   text-align: center;
+  padding: 4px;
+
+  color: white;
+}
+.btn-category {
+  background-color: aqua;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn-category:hover {
+  background-color: aquamarine;
 }
