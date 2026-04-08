@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Category.css";
 
 const Category = () => {
+  const [count, setCount] = useState(0);
   const r = useRef();
   const scrollRef = useRef(null);
   function handleFocus() {
+    setCount(count + 1);
     r.current.focus();
     r.current.style.backgroundColor = "red";
 
@@ -30,7 +32,7 @@ const Category = () => {
               </h2>
               <div className="category">
                 <button onClick={handleScroll} className="btn-category">
-                  button
+                  button {count}
                 </button>
               </div>
             </div>

@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import img from "../assets/gesund.jpg";
 
 const Home = () => {
+  const [windowWidth, setWindowWidth] = useState();
+  const [color, setColor] = useState("");
+  // useeffect with window events
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 500) {
+        setColor("red");
+      } else {
+        setWindowWidth(window.innerWidth);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      console.log("resizing");
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <section>
         <div className="home-container">
           <div className="home-flex">
             <div className="home-content">
-              <h1>Healthy Food, Healthy Life</h1>
+              <h1 style={{ backgroundColor: { color } }}>
+                Healthy Food, Healthy Life {windowWidth} {color}
+              </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas
