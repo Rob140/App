@@ -5,11 +5,13 @@ import img from "../assets/gesund.jpg";
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState();
   const [color, setColor] = useState("");
+  const [inputValue, setInputValue] = useState("");
+
   // useeffect with window events
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 500) {
-        setColor("red");
+        setColor(inputValue);
       } else {
         setWindowWidth(window.innerWidth);
       }
@@ -25,17 +27,24 @@ const Home = () => {
   return (
     <>
       <section>
+        <input
+          type="color"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
         <div className="home-container">
           <div className="home-flex">
             <div className="home-content">
-              <h1 style={{ backgroundColor: { color } }}>
-                Healthy Food, Healthy Life {windowWidth} {color}
+              <h1 style={{ backgroundColor: color }}>
+                Healthy Food, Healthy Life {windowWidth}
               </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas
               </p>
-              <button className="home-btn">Order Now</button>
+              <button onClick={() => setColor(inputValue)} className="home-btn">
+                Order Now
+              </button>
             </div>
           </div>
           <div className="home-flex">
