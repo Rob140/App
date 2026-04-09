@@ -5,7 +5,7 @@ import Home from "./Components/Home";
 import Bunner from "./Components/Bunner";
 import Category from "./Components/Category";
 import Product from "./Components/Product";
-import Blog from "./Components/Blog";
+// import Blog from "./Components/Blog";
 import Testemonial from "./Components/Testemonial";
 import Footer from "./Components/Footer";
 

@@ -3,28 +3,49 @@ import "./Bunner.css";
 
 const Bunner = () => {
   const [seconds, setSeconds] = useState(0);
-  const intervalRef = useRef(null);
-  //   timer with useref and useeffect
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setSeconds((prev) => prev + 1);
-      console.log("this is interv");
-    }, 2000);
+  const [users, setUsers] = useState(null);
 
-    return () => {
-      clearInterval(intervalRef.current);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("https://dummyjson.com/products");
+      const data = await response.json();
+      setUsers(data);
     };
+    fetchData();
+    // console.log(fetchData());
   }, []);
+  console.log(users, "this is user");
+
+  //   timer with useref and useeffect
+  // useEffect(() => {
+  //   intervalRef.current = setInterval(() => {
+  //     setSeconds((prev) => prev + 1);
+  //     console.log(intervalRef.current, "this is interv");
+  //   }, 2000);
+
+  //   return () => {
+  //     clearInterval(intervalRef.current);
+  //   };
+  // }, []);
   return (
-    <section>
-      <div className="bunner-container">
-        <div className="bunner-content">
-          <h1>Bunner</h1>
-          <p>This is a simple Bunner component.</p>
-          <button>click {seconds}</button>
+    <>
+      <ul>
+        {users?.products.map((user) => (
+          <li key={user.id}>{user.category}</li>
+        ))}
+      </ul>
+      <section>
+        <div className="bunner-container">
+          <div className="bunner-content">
+            <h1>Bunner</h1>
+            <p>This is a simple Bunner component.</p>
+            <button>click {seconds}</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
