@@ -16,7 +16,20 @@ const Bunner = () => {
     fetchData();
     // console.log(fetchData());
   }, []);
-  console.log(users, "this is user");
+  // console.log(users, "this is user");
+  let isIndex = "alex";
+  let is = `tom ${isIndex}`;
+  function truthy() {
+    if (isIndex && is) {
+      console.log(is);
+      return isIndex.length + 4;
+    } else {
+      return isIndex.toUpperCase();
+    }
+  }
+  console.log(truthy(), "isindex");
+  const run = Math.floor(Math.random() * 6);
+  console.log(run);
 
   //   timer with useref and useeffect
   // useEffect(() => {
