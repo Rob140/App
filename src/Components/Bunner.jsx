@@ -28,8 +28,14 @@ const Bunner = () => {
     }
   }
   console.log(truthy(), "isindex");
+  let str = "helo";
+  let num = 12;
+  let add = Number(str) - num;
+  console.log(add);
+
   const run = Math.floor(Math.random() * 6);
   console.log(run);
+  console.log(!!{}, typeof []);
 
   //   timer with useref and useeffect
   // useEffect(() => {
