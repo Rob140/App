@@ -42,3 +42,313 @@
 .btn-category:hover {
   background-color: aquamarine;
 }
+
+/* Enhanced Styles - Adding new styles without changing existing ones */
+
+/* Input field styling */
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: white;
+}
+
+/* Section styling */
+.c-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.8" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+/* Enhanced category card styling */
+.flex-category {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flex-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flex-category:hover::before {
+  opacity: 1;
+}
+
+.flex-category:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced h2 styling */
+.h2 {
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+
+/* Count display styling */
+.flex-category h3 {
+  position: relative;
+  z-index: 2;
+  color: #ffd700;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Enhanced button container */
+.category {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced button styling */
+.btn-category {
+  position: relative;
+  z-index: 2;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 127, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-category:hover::before {
+  left: 100%;
+}
+
+.btn-category:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 127, 255, 0.4);
+}
+
+.btn-category:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .catogery-container {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .flex-category {
+    flex: 1 1 180px;
+  }
+
+  .h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .c-section {
+    padding: 30px 15px;
+  }
+
+  input[type="text"] {
+    margin: 15px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .catogery-container {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .flex-category {
+    flex: 1 1 160px;
+    padding: 15px;
+  }
+
+  .category {
+    height: 150px;
+  }
+
+  .h2 {
+    font-size: 1rem;
+    padding: 2px;
+  }
+
+  .btn-category {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+
+  .flex-category h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .c-section {
+    padding: 20px 10px;
+  }
+
+  input[type="text"] {
+    margin: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: calc(100% - 20px);
+  }
+
+  .catogery-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .flex-category {
+    flex: none;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .category {
+    height: 120px;
+  }
+
+  .h2 {
+    font-size: 1.1rem;
+  }
+
+  .btn-category {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  .flex-category h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .flex-category {
+    padding: 15px;
+  }
+
+  .h2 {
+    font-size: 1rem;
+  }
+
+  .btn-category {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}
+
+/* Animation for focus states */
+.flex-category.focused {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading state styling */
+.flex-category.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.flex-category.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 3;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

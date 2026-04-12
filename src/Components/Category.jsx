@@ -30,6 +30,7 @@ const Category = () => {
               <h2 className="h2">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
               </h2>
+              {count > 0 && <h3>{count}</h3>}
               <div className="category">
                 <button onClick={handleScroll} className="btn-category">
                   button {count}
